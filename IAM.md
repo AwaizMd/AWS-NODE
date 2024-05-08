@@ -63,8 +63,7 @@ There are three major types of IAM policies used to control access in AWS.
 * Identity-Based Policies
 * Resource-Based Policies
 * Service Control Policies
-* Service Control Policies (SCPs) are used to manage all the AWS Accounts in your AWS Organization. SCPs can be applied at individual AWS accounts level or at    
-  Organizational Units (OUs) level inside your AWS Organization to control the maximum permission. (Applying the SCP to an OU means applying the same policy to all the AWS accounts under that OU).
+* Service Control Policies (SCPs) are used to manage all the AWS Accounts in your AWS Organization. SCPs can be applied at individual AWS accounts level or at Organizational Units (OUs) level inside your AWS Organization to control the maximum permission. (Applying the SCP to an OU means applying the same policy to all the AWS accounts under that OU).
 
 In order to apply SCPs, you must enable “All Features” in the organization. SCPs aren’t available if your organization has enabled only the consolidated billing features.
 
@@ -165,8 +164,8 @@ Identity federation is based on the trust between AWS and the External Identity 
 * Once the user has successfully logged in, send a confirmation token to AWS. In the case of web identity, it could be id_token, If it is Active Directory it could be SAML assertion.
 * AWS will trust the assertion and allow the user to assume the IAM Role thereby access the authorized resources in AWS.
   
-  ## STS API Methods
-  AWS IAM Roles provides temporary credentials to whoever authorized to assume an IAM Role. Temporary credentials are supplied by AWS Security Token Service (STS) by evaluating the permission polices attached to the role.
+## STS API Methods
+AWS IAM Roles provides temporary credentials to whoever authorized to assume an IAM Role. Temporary credentials are supplied by AWS Security Token Service (STS) by evaluating the permission polices attached to the role.
 
 There are Five main API methods provided by AWS STS.
 
