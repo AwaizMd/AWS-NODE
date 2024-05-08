@@ -9,7 +9,7 @@
 5. Identity Federation
 6. STS API Methods
 
-**IAM Introduction**
+## IAM Introduction
 
 AWS IAM is a global service that you can use to manage access to AWS services and resources. Access can be granted to IAM users, groups and roles using permission policies.
 
@@ -35,7 +35,7 @@ Once the IAM Role is assumed by an allowed entity, AWS STS (Security Token Servi
 
 When an IAM user from a different AWS Account assumes an IAM role of another account (E.g. Using the Switch Account feature in AWS Console or using the API) the temporary credentials from STS will replace his/her existing credentials of the trusted account — The account he is from.
 
-**IAM Best Practices**
+## IAM Best Practices
 Following are the best practices for using IAM service. They must be thoroughly followed as IAM is the centralized service for Security in the AWS platform.
 
 * Lock Away Your AWS Account Root User Access Keys
@@ -56,7 +56,7 @@ Following are the best practices for using IAM service. They must be thoroughly 
 * Monitor Activity in Your AWS Account
 * For more information about the best practices, follow this link to the AWS documentation.
 
-**Different Types of IAM Policies**
+## Different Types of IAM Policies
 There are three major types of IAM policies used to control access in AWS.
 
 * Service Control Policies
@@ -120,7 +120,7 @@ Resource-based policies are applied to a resource rather than to an identity. Yo
 ```
 Above policy can be applied to the “mybucket” s3 bucket to Allow only read-only access to the content of the s3 bucket to anybody. Note that we must specify “Principal” — to whom the policy gets applied to. In the above policy, it’s anyone.
 
-**Policy Evaluation**
+## Policy Evaluation
 When a principal tries to access an AWS resource, there could be multiple types of policies applied. (SCPs, Identity-based policies, resource-based policies). AWS evaluates all these policies before allow or deny access to the resource for the principle. The main logic behind policy evaluation is as follows.
 
 * The decision starts at Deny
@@ -149,7 +149,7 @@ When a user from a different AWS account wants to access a resource of another A
 * If SCP allows, then check the Identity-based policy(IAM policy) attached to the identity and the resource-based policy attached to the resource.
 * If BOTH Identity-based policy AND resource-based policy allows the action, Allow the user to access the resource.
 
-**Identity Federation**
+## Identity Federation
 You can create up to 5,000 IAM users per AWS account. Imagine your organization has 10,000 users who need access to an AWS account. First of all, it is not allowed to create 10,000 IAM users. Even if it was possible, administrating 10,000 IAM users can be a nightmare. This is where the identity federation comes into the play.
 
 Identity federation means outsourcing identity management to an external party. It could be google, facebook, twitter, on-premises active directory. Google, Facebook, Twitter, etc.. are examples of Web Identities. Active Directory, on the other hand, is an example of a Co-operate identity manager.
@@ -164,8 +164,9 @@ Identity federation is based on the trust between AWS and the External Identity 
 * When a user wants to access a resource in AWS, direct him/her to the login page of web identity (login with facebook, etc…) or the login page of Active Directory.
 * Once the user has successfully logged in, send a confirmation token to AWS. In the case of web identity, it could be id_token, If it is Active Directory it could be SAML assertion.
 * AWS will trust the assertion and allow the user to assume the IAM Role thereby access the authorized resources in AWS.
-* STS API Methods
-* AWS IAM Roles provides temporary credentials to whoever authorized to assume an IAM Role. Temporary credentials are supplied by AWS Security Token Service (STS) by evaluating the permission polices attached to the role.
+  
+  ## STS API Methods
+  AWS IAM Roles provides temporary credentials to whoever authorized to assume an IAM Role. Temporary credentials are supplied by AWS Security Token Service (STS) by evaluating the permission polices attached to the role.
 
 There are Five main API methods provided by AWS STS.
 
